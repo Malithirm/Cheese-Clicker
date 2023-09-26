@@ -6,9 +6,10 @@ using TMPro;
 
 public class UpgradeTest : MonoBehaviour
 {
-    public int UpgradeCount = 1;
+    public int UpgradeCount = 0;
     private int UpgradeCost = 10;
     public TextMeshProUGUI _TMPro;
+    public GameObject CheeseHammer;
 
     public CheeseMoon _cheeseMoon;
 
@@ -24,8 +25,9 @@ public class UpgradeTest : MonoBehaviour
             UpgradeCount++;
             _cheeseMoon.CheeseAmount -= UpgradeCost;
             UpgradeCost *= UpgradeCount;
+            CheeseHammer.SetActive(true);
 
-            Debug.Log(UpgradeCount + UpgradeCost);
+            Debug.Log(UpgradeCount);
         }
     }
 }

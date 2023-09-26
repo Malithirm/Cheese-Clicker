@@ -15,11 +15,15 @@ public class Upgrades : MonoBehaviour
 
         if (_timer >= 1.0f)
         {
-            _cheesiumMiningSpeed = Mathf.RoundToInt(Mathf.Pow(2, _upgradeTest.UpgradeCount));
+            if (_upgradeTest.UpgradeCount > 0)
+            {
+                _cheesiumMiningSpeed = Mathf.RoundToInt(Mathf.Pow(2, _upgradeTest.UpgradeCount));
 
-            _cheeseMoon.CheeseAmount += _cheesiumMiningSpeed;
+                _cheeseMoon.CheeseAmount += _cheesiumMiningSpeed;
 
-            _timer = 0f;
+                _timer = 0f;
+            }
+
         }
     }
 }
