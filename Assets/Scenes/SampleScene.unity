@@ -268,8 +268,8 @@ GameObject:
   - component: {fileID: 170754146}
   - component: {fileID: 170754150}
   - component: {fileID: 170754149}
-  - component: {fileID: 170754148}
   - component: {fileID: 170754147}
+  - component: {fileID: 170754148}
   m_Layer: 0
   m_Name: UpgradeHammer
   m_TagString: Untagged
@@ -723,8 +723,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 699432250}
-        m_TargetAssemblyTypeName: UpgradeTest, Assembly-CSharp
+      - m_Target: {fileID: 699432253}
+        m_TargetAssemblyTypeName: UpgradeSatelite, Assembly-CSharp
         m_MethodName: IncrementUpgrade
         m_Mode: 1
         m_Arguments:
@@ -802,11 +802,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1591d23969fcd468cea0f3e40ce11c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradeCount: 0
+  UpgradeCount: 1
   UpgradeCost: 100
-  _TMPro: {fileID: 0}
-  Satelite: {fileID: 0}
-  _cheeseMoon: {fileID: 0}
+  _TMPro: {fileID: 1164695572}
+  Satelite: {fileID: 887111083}
+  _cheeseMoon: {fileID: 1392367360}
 --- !u!1 &872827080
 GameObject:
   m_ObjectHideFlags: 0

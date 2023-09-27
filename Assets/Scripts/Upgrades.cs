@@ -11,7 +11,6 @@ public class Upgrades : MonoBehaviour
     public CheeseMoon _cheeseMoon;
     private float _timer = 0f;
 
-    private int _cheesiumMiningSpeed;
     private int _hammerMiningSpeed;
     private int _sateliteMiningSpeed;
 
@@ -20,8 +19,8 @@ public class Upgrades : MonoBehaviour
 
     private void Update()
     {
-        hammerCPS.text = _hammerMiningSpeed.ToString();
-        sateliteCPS.text = _sateliteMiningSpeed.ToString();
+        hammerCPS.text = $"CPS: {_hammerMiningSpeed.ToString()} Count: {_upgradeHammer.UpgradeCount - 1}";
+        sateliteCPS.text = $"CPS: {_sateliteMiningSpeed.ToString()} Count: {_upgradeSatelite.UpgradeCount - 1}";
 
         _timer += Time.deltaTime;
 
@@ -31,7 +30,7 @@ public class Upgrades : MonoBehaviour
             if (_upgradeHammer.UpgradeCount > 1)
             {
                 _hammerMiningSpeed = Mathf.RoundToInt(Mathf.Pow(2, _upgradeHammer.UpgradeCount));
-                AddCheesium();
+                _cheeseMoon.CheeseAmount += _hammerMiningSpeed;
 
                 _timer = 0f;
             }
@@ -40,17 +39,11 @@ public class Upgrades : MonoBehaviour
             if (_upgradeSatelite.UpgradeCount > 1)
             {
                 _sateliteMiningSpeed = Mathf.RoundToInt(Mathf.Pow(4, _upgradeSatelite.UpgradeCount));
-                AddCheesium();
+                _cheeseMoon.CheeseAmount += _sateliteMiningSpeed;
 
                 _timer = 0f;
             }
 
         }
-    }
-
-    private void AddCheesium()
-    {
-        _cheesiumMiningSpeed = _hammerMiningSpeed + _sateliteMiningSpeed;
-        _cheeseMoon.CheeseAmount += _cheesiumMiningSpeed;
     }
 }

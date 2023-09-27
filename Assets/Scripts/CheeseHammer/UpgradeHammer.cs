@@ -25,9 +25,11 @@ public class UpgradeHammer : MonoBehaviour
             UpgradeCount++;
             _cheeseMoon.CheeseAmount -= UpgradeCost;
             UpgradeCost *= UpgradeCount;
-            CheeseHammer.SetActive(true);
 
-            Debug.Log(UpgradeCount);
+            if (!CheeseHammer.activeSelf)
+            {
+                CheeseHammer.SetActive(true);
+            }
         }
     }
 }

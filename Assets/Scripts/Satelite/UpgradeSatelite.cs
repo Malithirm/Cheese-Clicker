@@ -6,8 +6,8 @@ using TMPro;
 
 public class UpgradeSatelite : MonoBehaviour
 {
-    public int UpgradeCount = 1;
-    public int UpgradeCost = 100;
+    [SerializeField] public int UpgradeCount = 1;
+    [SerializeField] public int UpgradeCost = 100;
     public TextMeshProUGUI _TMPro;
     public GameObject Satelite;
 
@@ -15,7 +15,7 @@ public class UpgradeSatelite : MonoBehaviour
 
     private void Update()
     {
-        _TMPro.text = UpgradeCost.ToString(); // the problem
+        _TMPro.text = UpgradeCost.ToString();
     }
 
     public void IncrementUpgrade()
@@ -25,9 +25,11 @@ public class UpgradeSatelite : MonoBehaviour
             UpgradeCount++;
             _cheeseMoon.CheeseAmount -= UpgradeCost;
             UpgradeCost *= UpgradeCount;
-            Satelite.SetActive(true);
 
-            Debug.Log(UpgradeCount);
+            if (!Satelite.activeSelf)
+            {
+                Satelite.SetActive(true);
+            }
         }
     }
 }
