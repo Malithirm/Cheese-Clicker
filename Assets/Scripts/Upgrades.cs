@@ -19,8 +19,8 @@ public class Upgrades : MonoBehaviour
 
     private void Update()
     {
-        hammerCPS.text = $"CPS: {_hammerMiningSpeed.ToString()} Count: {_upgradeHammer.UpgradeCount - 1}";
-        sateliteCPS.text = $"CPS: {_sateliteMiningSpeed.ToString()} Count: {_upgradeSatelite.UpgradeCount - 1}";
+        hammerCPS.text = $"CPS:\n{_hammerMiningSpeed.ToString()}\nCount: {_upgradeHammer.UpgradeCount - 1}";
+        sateliteCPS.text = $"CPS:\n{_sateliteMiningSpeed.ToString()}\nCount: {_upgradeSatelite.UpgradeCount - 1}";
 
         _timer += Time.deltaTime;
 
