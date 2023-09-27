@@ -6,7 +6,7 @@ public class Hammer : MonoBehaviour
 {
     void Update()
     {
-        Vector2 newPosition = new Vector2(transform.position.x, (Random.Range(675f, 680f)));
+        Vector2 newPosition = new Vector2(transform.position.x, (Random.Range(665f, 680f)));
         transform.position = newPosition;
     }
 }

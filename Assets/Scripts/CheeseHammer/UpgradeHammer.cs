@@ -4,10 +4,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
 
-public class UpgradeTest : MonoBehaviour
+public class UpgradeHammer : MonoBehaviour
 {
-    public int UpgradeCount = 0;
-    private int UpgradeCost = 10;
+    public int UpgradeCount = 1;
+    public int UpgradeCost = 10;
     public TextMeshProUGUI _TMPro;
     public GameObject CheeseHammer;
 
@@ -20,7 +20,7 @@ public class UpgradeTest : MonoBehaviour
 
     public void IncrementUpgrade()
     {
-        if (_cheeseMoon.CheeseAmount >= UpgradeCost)
+        if (_cheeseMoon != null && _cheeseMoon.CheeseAmount >= UpgradeCost)
         {
             UpgradeCount++;
             _cheeseMoon.CheeseAmount -= UpgradeCost;
