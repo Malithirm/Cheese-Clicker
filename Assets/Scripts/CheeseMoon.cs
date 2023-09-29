@@ -10,6 +10,8 @@ public class CheeseMoon : MonoBehaviour
     public int CheeseAmount;
     [SerializeField] private TextMeshProUGUI _cheeseText;
 
+    [SerializeField] private Upgrades _upgrades;
+
     void Update()
     {
         _cheeseText.text = $"Cheesium: \n{CheeseAmount.ToString()}";
@@ -19,6 +21,10 @@ public class CheeseMoon : MonoBehaviour
 
     public void IncrementCheesium()
     {
-        CheeseAmount++;
+        if (_upgrades.cursorUpgraded)
+        {
+            CheeseAmount += _upgrades._cursorMiningSpeed;
+        }
+        else CheeseAmount++;
     }
 }
