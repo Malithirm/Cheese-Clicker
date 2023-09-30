@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Satelite : MonoBehaviour
 {
     public float _orbitSpeed = 30f;
     private Vector3 orbitAxis;
-    [SerializeField] private Transform _cheeseMoon;
+    [HideInInspector] [SerializeField] private Transform _cheeseMoon;
 
     private void Start()
     {

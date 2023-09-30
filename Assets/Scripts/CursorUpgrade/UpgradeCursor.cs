@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -7,9 +5,9 @@ public class UpgradeCursor : MonoBehaviour
 {
     public int UpgradeCount = 1;
     public int UpgradeCost = 50;
-    public TextMeshProUGUI _TMPro;
+    [HideInInspector] [SerializeField] private TextMeshProUGUI _TMPro;
 
-    public CheeseMoon _cheeseMoon;
+    [HideInInspector] [SerializeField] private CheeseMoon _cheeseMoon;
 
     private void Update()
     {

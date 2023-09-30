@@ -1,17 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
 
 public class UpgradeSatelite : MonoBehaviour
 {
-    [SerializeField] public int UpgradeCount = 1;
-    [SerializeField] public int UpgradeCost = 100;
-    public TextMeshProUGUI _TMPro;
-    public GameObject Satelite;
+    public int UpgradeCount = 1;
+    public int UpgradeCost = 100;
+    [HideInInspector] [SerializeField] private TextMeshProUGUI _TMPro;
+    [HideInInspector] [SerializeField] private GameObject Satelite;
 
-    public CheeseMoon _cheeseMoon;
+    [HideInInspector] [SerializeField] private CheeseMoon _cheeseMoon;
 
     private void Update()
     {
